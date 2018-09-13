@@ -51,9 +51,13 @@ def sum_array(array)
 end
 
 def add_s(array)
-  array.collect_with_index do |ele, i|
-    next if i == 1
-    ele + "s"
+  array_s = []
+  array.each_with_index do |ele, i|
+    if i == 1
+      array_s << ele
+    else
+      array_s << ele + "s"
+    end
   end
-  array
+  array_s
 end
